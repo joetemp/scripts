@@ -1,0 +1,79 @@
+#!/bin/bash
+
+#!/bin/bash
+
+spacey() {
+    case $1 in
+        "")
+            echo "
+  ▀▄   ▄▀     /////////////////////////////////////////////////////////////////////////////////
+ ▄█▀███▀█▄   // Hey, I'm spacey. I'm here to help! Just type 'spacey' followed by a number. //
+█▀███████▀█ /////////////////////////////////////////////////////////////////////////////////
+▀ ▀▄▄ ▄▄▀ ▀
+              
+1. Establishing an internet connection.
+2. Setting your locale
+3. Setting your timezone and time
+4. Setting your machine's hostname
+                 ";; 
+        1) 
+            echo "
+  ▀▄   ▄▀     ////////////////////////////////////////////
+ ▄█▀███▀█▄   // 1. Establishing an internet connection //
+█▀███████▀█ ////////////////////////////////////////////
+▀ ▀▄▄ ▄▄▀ ▀
+
+1. To connect to a wifi netowrk, run:
+    # wifi-menu
+2. Select network.
+3. Enter password.
+4. Ping Google servers to test connection by running:
+    # ping -c 3 www.google.com
+                ";; 
+        2) 
+            echo "
+  ▀▄   ▄▀     ////////////////////////////
+ ▄█▀███▀█▄   // 2. Setting your locale //
+█▀███████▀█ ////////////////////////////
+▀ ▀▄▄ ▄▄▀ ▀
+
+1. Open locale.gen by running
+    # nano /etc/locale.gen
+2. Uncomment the line that contains 'en_US.UTF-8 UTF-8' by deleting the '#' in front. Now you are ready to generate your locale.
+3. To generate your locale, run:
+    # locale-gen
+4. Create locale.conf by running 'echo LANG=en_US.UTF-8 > /etc/locale.conf'
+5. Export your chosen locale by running:
+    # export LANG=en_US.UTF-8
+                ";;
+        3)
+            echo "
+  ▀▄   ▄▀     ///////////////////////////////////////
+ ▄█▀███▀█▄   // 3. Setting your timezone and time //
+█▀███████▀█ ///////////////////////////////////////
+▀ ▀▄▄ ▄▄▀ ▀
+
+1. Navigate to /usr/share/zoneinfo/America if you are in America. If not, navigate to the correct zone.
+2. Find the correct city (SubZone) for your timezone. Now you are ready to set your localtime.
+3. To set your localtime, run: 
+    # ln -s /usr/share/zoneinfo/America/SubZone /etc/localtime
+4. Run 'timedatectl set-ntp true' to sync your clock to remote server.
+    a. If you prefer, you can also set your clock manually by running:
+        # timedatectl set-time \"yyyy-MM-dd hh:mm:ss\"
+                ";;
+        4)
+            echo "
+  ▀▄   ▄▀     /////////////////////////////////////////
+ ▄█▀███▀█▄   // 4. Setting your machine's hostname  //
+█▀███████▀█ /////////////////////////////////////////
+▀ ▀▄▄ ▄▄▀ ▀
+   
+1. Set your machine's hostname to anything you like by running:
+    # echo myhostname > /etc/hostname
+2. Add the same hostname to /etc/hosts like so:
+    #<ip-address> <hostname.domain.org> <hostname>
+    127.0.0.1 localhost.localdomain localhost myhostname
+    ::1   localhost.localdomain localhost myhostname 
+                ";;
+    esac; 
+}
