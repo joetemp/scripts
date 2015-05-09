@@ -58,7 +58,8 @@ spacey() {
 2. Find the correct city (SubZone) for your timezone. Now you are ready to set your localtime.
 3. To set your localtime, run: 
     # ln -s /usr/share/zoneinfo/America/SubZone /etc/localtime
-4. Run 'timedatectl set-ntp true' to sync your clock to remote server.
+4. To sync your clock to remote server, run: 
+    # timedatectl set-ntp true
     a. If you prefer, you can also set your clock manually by running:
         # timedatectl set-time \"yyyy-MM-dd hh:mm:ss\"
                 ";;
