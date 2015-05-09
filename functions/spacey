@@ -42,7 +42,8 @@ spacey() {
 2. Uncomment the line that contains 'en_US.UTF-8 UTF-8' by deleting the '#' in front. Now you are ready to generate your locale.
 3. To generate your locale, run:
     # locale-gen
-4. Create locale.conf by running 'echo LANG=en_US.UTF-8 > /etc/locale.conf'
+4. Create locale.conf by running:
+    # echo LANG=en_US.UTF-8 > /etc/locale.conf
 5. Export your chosen locale by running:
     # export LANG=en_US.UTF-8
                 ";;
