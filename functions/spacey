@@ -11,7 +11,7 @@ spacey() {
 █▀███████▀█ /////////////////////////////////////////////////////////////////////////////////
 ▀ ▀▄▄ ▄▄▀ ▀
               
-1. Establishing an internet connection
+1. Establishing an internet connection      5. Auto-connect to known wifi networks
 2. Setting your locale
 3. Setting your timezone and time
 4. Setting your machine's hostname
