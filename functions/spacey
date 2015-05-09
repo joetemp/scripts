@@ -12,10 +12,10 @@ spacey() {
 ▀ ▀▄▄ ▄▄▀ ▀
               
 1. Establishing an internet connection      5. Auto-connect to known wifi networks
-2. Setting your locale
-3. Setting your timezone and time
+2. Setting your locale                      6. Set password for 'root' user 
+3. Setting your timezone and time           7. Add new user
 4. Setting your machine's hostname
-                 ";; 
+            ";; 
         1) 
             echo "
   ▀▄   ▄▀     ////////////////////////////////////////////
@@ -29,7 +29,7 @@ spacey() {
 3. Enter password.
 4. Ping Google servers to test connection by running:
     # ping -c 3 www.google.com
-                ";; 
+            ";; 
         2) 
             echo "
   ▀▄   ▄▀     ////////////////////////////
@@ -46,7 +46,7 @@ spacey() {
     # echo LANG=en_US.UTF-8 > /etc/locale.conf
 5. Export your chosen locale by running:
     # export LANG=en_US.UTF-8
-                ";;
+            ";;
         3)
             echo "
   ▀▄   ▄▀     ///////////////////////////////////////
@@ -62,12 +62,12 @@ spacey() {
     # timedatectl set-ntp true
     a. If you prefer, you can also set your clock manually by running:
         # timedatectl set-time \"yyyy-MM-dd hh:mm:ss\"
-                ";;
+            ";;
         4)
             echo "
-  ▀▄   ▄▀     /////////////////////////////////////////
- ▄█▀███▀█▄   // 4. Setting your machine's hostname  //
-█▀███████▀█ /////////////////////////////////////////
+  ▀▄   ▄▀     ////////////////////////////////////////
+ ▄█▀███▀█▄   // 4. Setting your machine's hostname //
+█▀███████▀█ ////////////////////////////////////////
 ▀ ▀▄▄ ▄▄▀ ▀
    
 1. Set your machine's hostname to anything you like by running:
@@ -76,6 +76,43 @@ spacey() {
     #<ip-address> <hostname.domain.org> <hostname>
     127.0.0.1 localhost.localdomain localhost myhostname
     ::1   localhost.localdomain localhost myhostname 
-                ";;
+            ";;
+
+        5)
+            echo "
+  ▀▄   ▄▀     ////////////////////////////////////////////
+ ▄█▀███▀█▄   // 5. Auto-connect to known wifi networks //
+█▀███████▀█ ////////////////////////////////////////////
+▀ ▀▄▄ ▄▄▀ ▀
+
+1. Install 'wpa_actiond' by running:
+    # pacman -S wpa_actiond
+2. Enable the netctl-auto service by running:
+    # systemctl enable netctl-auto@wlan0.service
+            ";;
+        6)
+            echo "
+  ▀▄   ▄▀     /////////////////////////////////////
+ ▄█▀███▀█▄   // 6. Set password for 'root' user //
+█▀███████▀█ /////////////////////////////////////
+▀ ▀▄▄ ▄▄▀ ▀
+
+1. To set a password for the 'root' user, run:
+    # passwd
+2. For the sake of demonstration, set you 'root' password to 'password'. Don't worry, we'll change it later.
+            ";;
+        7)
+            echo "
+  ▀▄   ▄▀     /////////////////////
+ ▄█▀███▀█▄   // 7. Add new user //
+█▀███████▀█ /////////////////////
+▀ ▀▄▄ ▄▄▀ ▀
+
+1. To add a new user, run:
+    # useradd -m -G wheel -s /bin/bash archie
+    b. The above command adds a user named 'archie' to the 'wheel' group. In addition, this command creates
+       a home directory for archie and sets his shell as /bin/bash. 
+            ";;
+
     esac; 
 }
