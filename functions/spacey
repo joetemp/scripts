@@ -11,10 +11,10 @@ spacey() {
 █▀███████▀█ /////////////////////////////////////////////////////////////////////////////////
 ▀ ▀▄▄ ▄▄▀ ▀
               
-1. Establishing an internet connection      5. Auto-connect to known wifi networks
+1. Establishing an internet connection      5. Auto-connect to known wifi networks     9. Get sound working
 2. Setting your locale                      6. Set password for 'root' user 
 3. Setting your timezone and time           7. Add new user
-4. Setting your machine's hostname
+4. Setting your machine's hostname          8. Edit sudoers file
             ";; 
         1) 
             echo "
@@ -114,5 +114,53 @@ spacey() {
        a home directory for archie and sets his shell as /bin/bash. 
             ";;
 
+        8)
+            echo "
+  ▀▄   ▄▀     //////////////////////////
+ ▄█▀███▀█▄   // 8. Edit sudoers file //
+█▀███████▀█ //////////////////////////
+▀ ▀▄▄ ▄▄▀ ▀
+
+1. To edit the sudoers file, run:
+    # visudo
+2. Scroll down with 'j' until you see the following line:
+    root ALL=(ALL) ALL
+3. Add your username with the same syntax below this line using the 'i' key to insert.
+4. When finished, hit the 'Esc' key and type 'ZZ' to save and exit.
+            ";;
+            
+        9)
+            echo "
+  ▀▄   ▄▀     //////////////////////////
+ ▄█▀███▀█▄   // 9. Get sound working //
+█▀███████▀█ //////////////////////////
+▀ ▀▄▄ ▄▄▀ ▀
+
+1. To get sound working, first install alsa-utils by running:
+    $ sudo pacman -S alsa-utils
+2. Then install alsa-plugins by running:
+    $ sudo pacman -S alsa-plugins
+3. By default, all channels are muted. Unmute them by running:
+    $ amixer sset Master unmute
+4. Test that sound is working by running:
+    $ speaker-test -c 2 
+            ";;
+
+        10)
+            echo "
+  ▀▄   ▄▀     /////////////////////////////////
+ ▄█▀███▀█▄   // 10. Install X window system //
+█▀███████▀█ /////////////////////////////////
+▀ ▀▄▄ ▄▄▀ ▀
+
+1. To install the X window system, run:
+    $ sudo pacman -S xorg-server xorg-server-utils xorg-xinit
+2. To get 3D support, install mesa by running:
+    $ sudo pacman -S mesa
+3. Install some GUI programs by running:
+    $ sudo pacman -S xorg-twm xorg-xclock xterm
+4. To test if this worked, run:
+    $ startx
+            ";;
     esac; 
 }
