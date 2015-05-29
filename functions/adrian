@@ -1,0 +1,14 @@
+#!/bin/bash
+adrian(){
+    tmux new-session -n test "
+    tmux new-window 'irssi -c freenode -n $1' &&
+    tmux new-window 'irssi -c freenode -n $2' &&
+    tmux new-window 'irssi -c freenode -n $3' &&
+    tmux new-window 'irssi -c freenode -n $4' &&
+    tmux new-window 'irssi -c freenode -n $5' &&
+    tmux new-window 'irssi -c freenode -n $6' &&
+    tmux new-window 'irssi -c freenode -n $7' &&
+    tmux new-window 'irssi -c freenode -n $8' &&
+    tmux new-window 'irssi -c freenode -n $9' &&
+    tmux new-window 'irssi -c freenode -n $10' && "
+}
