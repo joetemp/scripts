@@ -155,13 +155,11 @@ spacey() {
     $ sudo pacman -S xorg-server xorg-server-utils xorg-xinit
 2. Install the X.org driver for Raspberry Pi by running:
     $ sudo pacman -S xf86-video-fbdev
-3. To get 3D support, install mesa by running:
-    $ sudo pacman -S mesa
-4. Install some GUI programs by running:
+3. Install some GUI programs by running:
     $ sudo pacman -S xorg-twm xorg-xclock xterm
-5. In order for X to start, you need a configuration file. To get one, run:
+4. In order for X to start, you need a configuration file. To get one, run:
     $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
-6. To test if this worked, run:
+5. To test if this worked, run:
     $ startx
             ";;
     esac; 
