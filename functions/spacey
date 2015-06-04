@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 spacey() {
     case $1 in
         "")
