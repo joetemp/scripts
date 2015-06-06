@@ -120,7 +120,7 @@ spacey() {
 ▀ ▀▄▄ ▄▄▀ ▀
 
 
-1. 'sudo' is not installed by default. To install it, run:
+1. To install 'sudo', run:
     # pacman -S sudo
 2. To edit the sudoers file, run:
     # visudo
