@@ -119,12 +119,15 @@ spacey() {
 █▀███████▀█ //////////////////////////
 ▀ ▀▄▄ ▄▄▀ ▀
 
-1. To edit the sudoers file, run:
+
+1. 'sudo' is not installed by default. To install it, run:
+    # pacman -S sudo
+2. To edit the sudoers file, run:
     # visudo
-2. Scroll down with 'j' until you see the following line:
+3. Scroll down with 'j' until you see the following line:
     root ALL=(ALL) ALL
-3. Add your username with the same syntax below this line using the 'i' key to insert.
-4. When finished, hit the 'Esc' key and type 'ZZ' to save and exit.
+4. Add your username with the same syntax below this line using the 'i' key to insert.
+5. When finished, hit the 'Esc' key and type 'ZZ' to save and exit.
             ";;
             
         9)
@@ -136,9 +139,12 @@ spacey() {
 
 1. To get sound working, first install the following four packages by running:
     $ sudo pacman -S alsa-utils alsa-firmware alsa-lib alsa-plugins
-2. By default, all channels are muted. Unmute the PCM channel by running:
+2. Select an audio source for output by running:
+    $ amixer cset numid=3 1
+    * Note: The '1' selects analog out. For HDMI, replace it with a 3. For auto, use '0'.
+3. By default, all channels are muted. Unmute the PCM channel by running:
     $ amixer sset PCM unmute
-3. Test that sound is working by running:
+4. Test that sound is working by running:
     $ speaker-test -c 2 
             ";;
 
