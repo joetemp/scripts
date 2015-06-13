@@ -109,7 +109,10 @@ spacey() {
 1. To add a new user, run:
     # useradd -m -G wheel -s /bin/bash archie
     b. The above command adds a user named 'archie' to the 'wheel' group. In addition, this command creates
-       a home directory for archie and sets his shell as /bin/bash. 
+       a home directory for archie and sets his shell as /bin/bash.
+2. Set a password for your new user by running:
+    # passwd username
+3. For the sake of demonstration, set your 'user' password to 'password'. Don't worry, we'll change it later.
             ";;
 
         8)
